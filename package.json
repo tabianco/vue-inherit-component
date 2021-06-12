@@ -7,6 +7,7 @@
     "build:v2": "tsc -p packages/v2",
     "build:v3": "tsc -p packages/v3",
     "lint": "eslint --ext .ts --ignore-path .gitignore .",
+    "test": "npm run build:v2",
     "clean": "rimraf packages/*/dist packages/*/types"
   },
   "license": "MIT",
