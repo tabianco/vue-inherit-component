@@ -17,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/tabianco/vue-inherit-component/issues"
   },
-  "homepage": "https://github.com/tabianco/vue-inherit-component/packages/v3#readme",
+  "homepage": "https://github.com/tabianco/vue-inherit-component/tree/main/packages/v3#readme",
   "peerDependencies": {
     "vue": "^3.1.1"
   }
