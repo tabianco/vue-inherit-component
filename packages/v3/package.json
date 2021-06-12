@@ -1,0 +1,24 @@
+{
+  "name": "@tabianco/vue-inherit-component-next",
+  "version": "3.0.0",
+  "description": "Overrides default behavior of pre-defined Vue3 components",
+  "main": "dist/index.js",
+  "typings": "types/index.d.ts",
+  "files": [
+    "dist",
+    "types"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tabianco/vue-inherit-component.git"
+  },
+  "author": "Tabian Co.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tabianco/vue-inherit-component/issues"
+  },
+  "homepage": "https://github.com/tabianco/vue-inherit-component/packages/v3#readme",
+  "peerDependencies": {
+    "vue": "^3.1.1"
+  }
+}
