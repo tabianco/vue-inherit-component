@@ -12,6 +12,7 @@ declare module 'vue/types/vue' {
 declare interface InheritComponentOptions<BaseProps, Props> {
   computedClass?: (props: Props & BaseProps) => any
   computedProps?: (props: Props & BaseProps) => Props & BaseProps
+  name?: string
   props?: PropsDefinition<Props>
 }
 
@@ -40,6 +41,7 @@ export default function inheritComponent
     model: 'options' in instance
       ? instance.options!.model
       : componentDef.model,
+    name: options.name,
 
     props: {
       ...originalProps,
