@@ -28,7 +28,7 @@ export default function inheritComponent
 ): ComponentOptions<V, any, any, any, PropsDefinition<BaseProps> & PropsDefinition<Props>> &
   ThisType<CombinedVueInstance<V, any, any, any, BaseProps & Props>> {
   const instance = baseComponent as Extract<BaseComponent, typeof Vue>
-  const componentDef = baseComponent as Extract<BaseComponent, { props?: PropsDefinition<BaseProps> }>
+  const componentDef = baseComponent as Extract<BaseComponent, ComponentOptions<V, any, any, any, PropsDefinition<BaseProps>>>
 
   const originalProps = 'options' in instance
     ? instance.options!.props as PropsDefinition<BaseProps>
@@ -37,6 +37,10 @@ export default function inheritComponent
       : undefined
 
   return {
+    model: 'options' in instance
+      ? instance.options!.model
+      : componentDef.model,
+
     props: {
       ...originalProps,
       ...options.props
