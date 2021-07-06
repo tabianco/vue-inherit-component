@@ -50,14 +50,17 @@ export default function inheritComponent
 
     render (h) {
       const $props = this.$props as Props & BaseProps
+      const props = options.computedProps?.($props) ?? $props
+
+      const scopedSlots = proxyScopedSlots(this)
 
       return h(baseComponent, {
         attrs: this.$attrs,
-        class: options.computedClass?.($props),
+        class: options.computedClass?.(props),
         on: this.$listeners,
-        props: options.computedProps?.($props) ?? $props,
-        scopedSlots: proxyScopedSlots(this)
-      })
+        props,
+        scopedSlots
+      }, scopedSlots?.default(props) ?? [])
     }
   }
 }
