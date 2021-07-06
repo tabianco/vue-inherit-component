@@ -18,6 +18,9 @@
     "url": "https://github.com/tabianco/vue-inherit-component/issues"
   },
   "homepage": "https://github.com/tabianco/vue-inherit-component/tree/main/packages/v2#readme",
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "vue": "^2.6.14"
   }
