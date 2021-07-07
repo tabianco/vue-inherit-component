@@ -60,7 +60,7 @@ export default function inheritComponent
         on: this.$listeners,
         props,
         scopedSlots
-      }, scopedSlots?.default(props) ?? [])
+      }, scopedSlots.default?.(props) ?? [])
     }
   }
 }
