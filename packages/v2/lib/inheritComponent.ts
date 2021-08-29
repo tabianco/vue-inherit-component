@@ -60,7 +60,7 @@ export default function inheritComponent
         on: this.$listeners,
         props,
         scopedSlots
-      }, this.$children)
+      }, this.$slots.default)
     }
   }
 }
