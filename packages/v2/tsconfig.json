@@ -14,5 +14,9 @@
     "jsx": "preserve",
     "outDir": "./dist",
     "strict": true
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "**/spec.ts"
+  ]
 }
