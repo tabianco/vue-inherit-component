@@ -21,7 +21,33 @@
   "publishConfig": {
     "access": "public"
   },
+  "scripts": {
+    "test": "jest"
+  },
   "devDependencies": {
-    "vue": "^2.6.14"
+    "@types/jest": "^27.0.1",
+    "@vue/composition-api": "^1.1.3",
+    "@vue/test-utils": "^1.2.2",
+    "jest": "^27.1.0",
+    "jest-serializer-vue": "^2.0.2",
+    "ts-jest": "^27.0.5",
+    "vue": "^2.6.14",
+    "vue-jest": "^3.0.7"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "ts",
+      "vue"
+    ],
+    "snapshotSerializers": [
+      "jest-serializer-vue"
+    ],
+    "testEnvironment": "jsdom",
+    "testRegex": "(/__tests__/.*|(\\.|/))spec\\.tsx?$",
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest",
+      "^.+\\.vue$": "vue-jest"
+    }
   }
 }
