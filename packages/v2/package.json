@@ -1,6 +1,6 @@
 {
   "name": "@tabianco/vue-inherit-component",
-  "version": "2.2.2",
+  "version": "2.2.3",
   "description": "Overrides default behavior of pre-defined Vue2 components",
   "main": "dist/index.js",
   "typings": "types/index.d.ts",
