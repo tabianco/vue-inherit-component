@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render function w/ props and default slot renders correctly 1`] = `
+<div
+  class="inherited-component"
+>
+  <div>
+    Element 1
+  </div>
+  <div>
+    Element 2
+  </div>
+  <div>
+    Element 3
+  </div>
+  <div>
+    
+    Child 1
+  
+  </div>
+  <div>
+    
+    Child 2
+  
+  </div>
+  <div>
+    
+    Child 3
+  
+  </div>
+</div>
+`;
+
+exports[`render function w/ props and default slot should re-render 1`] = `
+<div
+  class="inherited-component"
+>
+  <div>
+    Element 1
+  </div>
+  <div>
+    
+    Child 1
+  
+  </div>
+  <div>
+    Element 2
+  </div>
+  <div>
+    Element 3
+  </div>
+</div>
+`;

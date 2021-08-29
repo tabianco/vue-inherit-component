@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<template> w/ default slot renders correctly 1`] = `
+<div
+  class="inherited-component"
+>
+  <div>
+    
+    Child 1
+  
+  </div>
+  <div>
+    
+    Child 2
+  
+  </div>
+  <div>
+    
+    Child 3
+  
+  </div>
+</div>
+`;
+
+exports[`<template> w/ default slot should re-render 1`] = `
+<div
+  class="inherited-component"
+>
+  <div>
+    
+    Child 1
+  
+  </div>
+</div>
+`;

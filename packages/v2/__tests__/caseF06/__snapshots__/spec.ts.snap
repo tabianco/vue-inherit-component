@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render function w/ nested slots & scopedSlots renders correctly 1`] = `
+<div
+  class="inherited-component"
+>
+  <div
+    class="slot-default"
+  >
+    <div
+      class="slot-default"
+    >
+      <div>
+        Child 1
+      </div>
+       
+      <div>
+        Child 2
+      </div>
+       
+      <div>
+        Child 3
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="slot-named"
+  >
+    <div
+      class="slot-false"
+    >
+      <div>
+        Child 4
+      </div>
+       
+      <div>
+        Child 5
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="slot-scoped"
+  >
+    <div
+      class="scopedSlot-false"
+    >
+      <div>
+        
+      Child 8
+    
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`render function w/ nested slots & scopedSlots should re-render 1`] = `
+<div
+  class="inherited-component"
+>
+  <div
+    class="slot-default"
+  >
+    <div
+      class="slot-default"
+    >
+      <div>
+        Child 1
+      </div>
+       
+      <div>
+        Child 2
+      </div>
+       
+      <div>
+        Child 3
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="slot-named"
+  >
+    <div
+      class="slot-true"
+    >
+      <div>
+        Child 6
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="slot-scoped"
+  >
+    <div
+      class="scopedSlot-true"
+    >
+      <div>
+        
+      Child 7
+    
+      </div>
+    </div>
+  </div>
+</div>
+`;

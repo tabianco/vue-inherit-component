@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<template> w/ named slot renders correctly 1`] = `
+<div
+  class="inherited-component"
+>
+  <!---->
+   
+  <div
+    class="slot-default"
+  >
+    <div>
+      Child 1
+    </div>
+     
+    <div>
+      Child 2
+    </div>
+     
+    <div>
+      Child 3
+    </div>
+  </div>
+   
+  <div
+    class="slot-named"
+  >
+    <div>
+      Child 4
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<template> w/ named slot should re-render 1`] = `
+<div
+  class="inherited-component"
+>
+  <div
+    class="slot-named"
+  >
+    <div>
+      Child 4
+    </div>
+  </div>
+   
+  <div
+    class="slot-default"
+  >
+    <div>
+      Child 1
+    </div>
+     
+    <div>
+      Child 2
+    </div>
+     
+    <div>
+      Child 3
+    </div>
+  </div>
+   
+  <!---->
+</div>
+`;
