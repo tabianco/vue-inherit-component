@@ -19,7 +19,7 @@ export default function proxyScopedSlots (vm: InstanceType<typeof Vue>) {
   const fns = Object.entries(vm.$scopedSlots).map(([key, fn]) => ({
     fn,
     key,
-    proxy: true
+    proxy: key in vm.$slots
   })).filter(item => item.fn !== undefined) as Required<ScopedSlotsData>
 
   return vm._u(fns)
