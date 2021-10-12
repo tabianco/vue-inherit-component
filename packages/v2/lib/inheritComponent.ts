@@ -9,11 +9,28 @@ declare module 'vue/types/vue' {
   }
 }
 
+type Listeners = Record<string, Function | Function[]>
+
 declare interface InheritComponentOptions<BaseProps, Props> {
-  computedClass?: (props: Props & BaseProps) => any
-  computedProps?: (props: Props & BaseProps) => Props & BaseProps
+  computedClass?: (this: typeof Vue, props: Props & BaseProps) => any
+  computedProps?: (this: typeof Vue, props: Props & BaseProps) => Props & BaseProps
+  listeners?: Listeners
   name?: string
   props?: PropsDefinition<Props>
+}
+
+function mergeListeners (a: Listeners, b?: Listeners): Listeners {
+  const map = new Map<string, Function | Function[]>(Object.entries(a))
+
+  b && Object.keys(b).forEach((key) => {
+    if (map.has(key)) {
+      map.set(key, ([] as Function[]).concat(map.get(key)!).concat(b[key]))
+    } else {
+      map.set(key, b[key])
+    }
+  })
+
+  return Object.fromEntries(map.entries())
 }
 
 export default function inheritComponent
@@ -50,14 +67,14 @@ export default function inheritComponent
 
     render (h) {
       const $props = this.$props as Props & BaseProps
-      const props = options.computedProps?.($props) ?? $props
-
+      const on = mergeListeners(this.$listeners, options.listeners)
+      const props = options.computedProps?.call(this, $props) ?? $props
       const scopedSlots = proxyScopedSlots(this)
 
       return h(baseComponent, {
         attrs: this.$attrs,
-        class: options.computedClass?.(props),
-        on: this.$listeners,
+        class: options.computedClass?.call(this, props),
+        on,
         props,
         scopedSlots
       }, this.$slots.default)
